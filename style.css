@@ -1,8 +1,7 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,61 +9,161 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #0f172a, #312e81, #111827);
+
+  font-family: Arial, sans-serif;
   color: white;
+
+  background:
+    radial-gradient(circle at 20% 20%, #6a20c9, transparent 35%),
+    radial-gradient(circle at 80% 80%, #c51c91, transparent 35%),
+    #08000f;
+
+  overflow: hidden;
 }
 
 .card {
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 380px;
+
   padding: 35px 25px;
+
   text-align: center;
+
   background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 25px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border-radius: 28px;
+
+  box-shadow: 0 0 45px rgba(160, 70, 255, 0.3);
+
+  animation: appear 0.8s ease;
 }
+
+/* ВИДЕО */
 
 .avatar {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 15px;
+  width: 145px;
+  height: 145px;
+
+  margin: 0 auto 20px;
+
+  padding: 4px;
+
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #ec4899);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 35px;
-  font-weight: bold;
+
+  background: linear-gradient(
+    135deg,
+    #ff3cac,
+    #784ba0,
+    #2b86c5
+  );
+
+  box-shadow:
+    0 0 20px rgba(255, 60, 172, 0.6),
+    0 0 45px rgba(120, 75, 160, 0.4);
+
+  animation: glow 3s infinite alternate;
 }
 
+.avatar video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* ИМЯ */
+
 h1 {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 8px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 25px rgba(180,90,255,0.8);
 }
 
 p {
-  color: #cbd5e1;
+  color: #cfcfcf;
+  font-size: 15px;
+
   margin-bottom: 25px;
 }
 
-a {
+/* КНОПКИ */
+
+.card a {
   display: block;
+
+  margin: 14px 0;
   padding: 16px;
-  margin: 13px 0;
-  border-radius: 15px;
-  text-decoration: none;
+
   color: white;
+  text-decoration: none;
+
   font-size: 17px;
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: 0.25s;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 15px;
+
+  transition: 0.3s;
 }
 
-a:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.2);
+.card a:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  background: rgba(255,255,255,0.16);
+
+  box-shadow:
+    0 0 20px rgba(180,90,255,0.5);
+}
+
+/* АНИМАЦИИ */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes glow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.04);
+  }
+}
+
+/* ТЕЛЕФОН */
+
+@media (max-width: 480px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  .avatar {
+    width: 130px;
+    height: 130px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
 }
