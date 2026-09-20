@@ -13,13 +13,37 @@ body {
   font-family: Arial, sans-serif;
   color: white;
 
-  background:
-    radial-gradient(circle at 20% 20%, #6a20c9, transparent 35%),
-    radial-gradient(circle at 80% 80%, #c51c91, transparent 35%),
-    #08000f;
-
   overflow: hidden;
 }
+
+/* ФОНОВОЕ ВИДЕО */
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -2;
+}
+
+/* ЗАТЕМНЕНИЕ ФОНА */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  z-index: -1;
+}
+
+/* КАРТОЧКА */
 
 .card {
   width: 90%;
@@ -29,18 +53,19 @@ body {
 
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(8px);
 
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 28px;
+  border-radius: 20px;
 
-  box-shadow: 0 0 45px rgba(160, 70, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
 
   animation: appear 0.8s ease;
 }
 
-/* ВИДЕО */
+/* АВАТАР */
 
 .avatar {
   width: 145px;
@@ -89,13 +114,13 @@ h1 {
 }
 
 p {
-  color: #cfcfcf;
+  color: #eeeeee;
   font-size: 15px;
 
   margin-bottom: 25px;
 }
 
-/* КНОПКИ */
+/* СОЦИАЛЬНЫЕ ССЫЛКИ */
 
 .card a {
   display: block;
@@ -109,22 +134,22 @@ p {
   font-size: 17px;
   font-weight: bold;
 
-  background: rgba(255,255,255,0.08);
+  background: transparent;
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
 
-  border-radius: 15px;
+  border-radius: 0;
 
   transition: 0.3s;
 }
 
 .card a:hover {
-  transform: translateY(-4px) scale(1.02);
+  transform: translateY(-3px);
 
-  background: rgba(255,255,255,0.16);
+  background: rgba(255, 255, 255, 0.1);
 
   box-shadow:
-    0 0 20px rgba(180,90,255,0.5);
+    0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 /* АНИМАЦИИ */
@@ -166,21 +191,4 @@ p {
   h1 {
     font-size: 27px;
   }
-}
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: -1;
 }
