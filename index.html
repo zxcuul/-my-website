@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>My Socials</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css?v=3"
+  >
 </head>
 
 <body>
 
-  <!-- ФОН -->
+  <!-- =========================
+       ФОНОВОЕ ВИДЕО
+  ========================== -->
+
   <video
     class="background-video"
     autoplay
@@ -26,11 +37,17 @@
   </video>
 
 
-  <!-- КАРТОЧКА -->
+  <!-- =========================
+       ОСНОВНАЯ КАРТОЧКА
+  ========================== -->
+
   <div class="card">
 
+
     <!-- АВАТАР -->
+
     <div class="avatar">
+
       <video
         src="9137147973081848336.mp4"
         autoplay
@@ -38,24 +55,38 @@
         loop
         playsinline
       ></video>
+
     </div>
 
 
     <!-- ИМЯ -->
+
     <h1>zxcuul</h1>
 
 
     <!-- =========================
-         ПЛЕЕР
+         МУЗЫКАЛЬНЫЙ ПЛЕЕР
     ========================== -->
 
     <div class="music-player">
 
-      <div class="music-title" id="musicTitle">
+
+      <!-- НАЗВАНИЕ -->
+
+      <div
+        class="music-title"
+        id="musicTitle"
+      >
         Выберите трек
       </div>
 
-      <div class="music-counter" id="musicCounter">
+
+      <!-- НОМЕР ТРЕКА -->
+
+      <div
+        class="music-counter"
+        id="musicCounter"
+      >
         1 / 4
       </div>
 
@@ -150,7 +181,7 @@
 
 
     <!-- =========================
-         СОЦСЕТИ
+         СОЦИАЛЬНЫЕ СЕТИ
     ========================== -->
 
     <a
@@ -179,17 +210,26 @@
       TikTok
     </a>
 
+
   </div>
 
 
-  <!-- АУДИО -->
+  <!-- =========================
+       АУДИО
+  ========================== -->
 
-  <audio id="audio"></audio>
+  <audio
+    id="audio"
+    preload="metadata"
+  ></audio>
 
 
-  <!-- SCRIPT -->
+  <!-- =========================
+       SCRIPT
+  ========================== -->
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 
 </body>
+
 </html>
