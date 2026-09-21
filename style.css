@@ -42,7 +42,7 @@ body::before {
   z-index: -1;
 }
 
-/* ПОЛНОСТЬЮ ПРОЗРАЧНАЯ КАРТОЧКА */
+/* КАРТОЧКА — ЧУТЬ ВЫШЕ */
 
 .card {
   width: 90%;
@@ -57,9 +57,11 @@ body::before {
   box-shadow: none;
 
   animation: appear 0.8s ease;
+
+  transform: translateY(-25px);
 }
 
-/* АВАТАРКА — ЕДИНСТВЕННОЕ ОФОРМЛЕНИЕ */
+/* АВАТАРКА */
 
 .avatar {
   width: 145px;
@@ -142,13 +144,337 @@ p {
   transition: 0.3s;
 }
 
-/* ЭФФЕКТ */
-
 .card a:hover {
   transform: scale(1.08);
 
   background: transparent;
   box-shadow: none;
+}
+
+/* =====================================================
+   МУЗЫКАЛЬНЫЙ ПЛЕЕР
+===================================================== */
+
+.music-player {
+  width: 100%;
+
+  margin: 10px 0 18px;
+  padding: 16px;
+
+  border-radius: 20px;
+
+  background: rgba(0, 0, 0, 0.28);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* НАЗВАНИЕ ТРЕКА */
+
+.music-title {
+  font-size: 15px;
+  font-weight: bold;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  margin-bottom: 3px;
+}
+
+.music-counter {
+  font-size: 11px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  margin-bottom: 12px;
+}
+
+/* ПРОГРЕСС */
+
+.progress-area {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  width: 100%;
+
+  margin-bottom: 13px;
+}
+
+.progress-area span {
+  font-size: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  min-width: 28px;
+}
+
+.progress-area span:last-child {
+  text-align: right;
+}
+
+#progress {
+  flex: 1;
+
+  width: 100%;
+
+  height: 4px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+}
+
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+#progress::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+/* КНОПКИ */
+
+.player-controls {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 12px;
+}
+
+.control-btn,
+.play-btn {
+  border: none;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.control-btn {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  font-size: 15px;
+}
+
+.play-btn {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 18px;
+
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 0.15);
+}
+
+.control-btn:hover,
+.play-btn:hover {
+  transform: scale(1.08);
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ГРОМКОСТЬ */
+
+.volume-area {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 13px;
+}
+
+.volume-area span {
+  font-size: 13px;
+}
+
+#volume {
+  flex: 1;
+
+  height: 3px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  border-radius: 10px;
+}
+
+#volume::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+#volume::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   PLAYLIST
+===================================================== */
+
+.playlist {
+  text-align: left;
+
+  max-height: 130px;
+
+  overflow-y: auto;
+
+  padding-right: 3px;
+}
+
+.playlist-title {
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  margin-bottom: 7px;
+}
+
+.playlist-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  width: 100%;
+
+  padding: 9px 10px;
+
+  margin: 3px 0;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  font-size: 12px;
+}
+
+.playlist-item:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.playlist-item.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.playlist-number {
+  width: 20px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+.playlist-name {
+  flex: 1;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+/* СКРОЛЛ ПЛЕЙЛИСТА */
+
+.playlist::-webkit-scrollbar {
+  width: 3px;
+}
+
+.playlist::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+
+  border-radius: 10px;
 }
 
 /* ПОЯВЛЕНИЕ */
@@ -161,7 +487,7 @@ p {
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-25px);
   }
 }
 
@@ -183,6 +509,8 @@ p {
 
   .card {
     padding: 30px 20px;
+
+    transform: translateY(-18px);
   }
 
   .avatar {
@@ -192,5 +520,13 @@ p {
 
   h1 {
     font-size: 27px;
+  }
+
+  .music-player {
+    padding: 14px;
+  }
+
+  .playlist {
+    max-height: 115px;
   }
 }
