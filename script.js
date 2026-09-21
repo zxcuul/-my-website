@@ -17,36 +17,38 @@ const playlistItems = document.getElementById("playlistItems");
 
 
 /* ==========================================
-   ПЛЕЙЛИСТ
+   ТВОИ ПЕСНИ
 ========================================== */
 
 const playlist = [
   {
     title: "Track 01",
-    file: "song1.mp3"
+    file: "song1.mp2.mp3"
   },
   {
     title: "Track 02",
-    file: "song2.mp3"
+    file: "song1.mp3.mp3"
   },
   {
     title: "Track 03",
-    file: "song3.mp3"
+    file: "song2.mp3.m4a"
   },
   {
     title: "Track 04",
-    file: "song4.mp3"
+    file: "song4.mp4.mp3"
   }
 ];
+
 
 let currentTrack = 0;
 
 
 /* ==========================================
-   ФОРМАТ ВРЕМЕНИ
+   ВРЕМЯ
 ========================================== */
 
 function formatTime(seconds) {
+
   if (!isFinite(seconds)) {
     return "0:00";
   }
@@ -62,7 +64,7 @@ function formatTime(seconds) {
 
 
 /* ==========================================
-   СОЗДАНИЕ ПЛЕЙЛИСТА
+   PLAYLIST
 ========================================== */
 
 function createPlaylist() {
@@ -130,6 +132,7 @@ function loadTrack(index) {
   duration.textContent = "0:00";
 
   updateActiveTrack();
+
 }
 
 
@@ -208,7 +211,7 @@ playBtn.addEventListener("click", () => {
 
 
 /* ==========================================
-   ПРЕДЫДУЩИЙ ТРЕК
+   НАЗАД
 ========================================== */
 
 prevBtn.addEventListener("click", () => {
@@ -216,7 +219,9 @@ prevBtn.addEventListener("click", () => {
   currentTrack--;
 
   if (currentTrack < 0) {
+
     currentTrack = playlist.length - 1;
+
   }
 
   loadTrack(currentTrack);
@@ -227,7 +232,7 @@ prevBtn.addEventListener("click", () => {
 
 
 /* ==========================================
-   СЛЕДУЮЩИЙ ТРЕК
+   ВПЕРЁД
 ========================================== */
 
 nextBtn.addEventListener("click", () => {
@@ -235,7 +240,9 @@ nextBtn.addEventListener("click", () => {
   currentTrack++;
 
   if (currentTrack >= playlist.length) {
+
     currentTrack = 0;
+
   }
 
   loadTrack(currentTrack);
@@ -246,7 +253,7 @@ nextBtn.addEventListener("click", () => {
 
 
 /* ==========================================
-   АВТОМАТИЧЕСКИЙ СЛЕДУЮЩИЙ ТРЕК
+   АВТОМАТИЧЕСКИ СЛЕДУЮЩАЯ ПЕСНЯ
 ========================================== */
 
 audio.addEventListener("ended", () => {
@@ -254,7 +261,9 @@ audio.addEventListener("ended", () => {
   currentTrack++;
 
   if (currentTrack >= playlist.length) {
+
     currentTrack = 0;
+
   }
 
   loadTrack(currentTrack);
@@ -298,7 +307,7 @@ audio.addEventListener("loadedmetadata", () => {
 
 
 /* ==========================================
-   ПЕРЕМЕЩЕНИЕ ПО ТРЕКУ
+   ПЕРЕМЕЩЕНИЕ ПО ПЕСНЕ
 ========================================== */
 
 progress.addEventListener("input", () => {
@@ -326,10 +335,15 @@ volume.addEventListener("input", () => {
 
 
 /* ==========================================
-   ЗАПУСК
+   НАЧАЛЬНАЯ ГРОМКОСТЬ
 ========================================== */
 
 audio.volume = 0.8;
+
+
+/* ==========================================
+   ЗАПУСК
+========================================== */
 
 createPlaylist();
 
