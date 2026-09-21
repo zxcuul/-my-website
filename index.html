@@ -3,16 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>My Socials</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- ФОНОВОЕ ВИДЕО -->
+
   <video class="background-video" autoplay muted loop playsinline>
     <source src="-7941381526895366544.mp4" type="video/mp4">
   </video>
+
+
+  <!-- ОСНОВНАЯ КАРТОЧКА -->
+
   <div class="card">
+
+    <!-- АВАТАР -->
 
     <div class="avatar">
       <video
@@ -24,16 +34,149 @@
       </video>
     </div>
 
+
+    <!-- ИМЯ -->
+
     <h1>zxcuul</h1>
-    
-    <a href="https://t.me/zxcuull" target="_blank">Telegram</a>
 
-    <a href="https://instagram.com/_khmdv_07" target="_blank">Instagram</a>
 
-    <a href="https://www.tiktok.com/@__khamidov__07" target="_blank">TikTok</a>
+    <!-- ==============================
+         МУЗЫКАЛЬНЫЙ ПЛЕЕР
+    =============================== -->
+
+    <div class="music-player">
+
+      <div class="music-title" id="musicTitle">
+        Выберите трек
+      </div>
+
+      <div class="music-counter" id="musicCounter">
+        0 / 0
+      </div>
+
+
+      <!-- ПРОГРЕСС -->
+
+      <div class="progress-area">
+
+        <span id="currentTime">
+          0:00
+        </span>
+
+        <input
+          type="range"
+          id="progress"
+          min="0"
+          max="100"
+          value="0"
+        >
+
+        <span id="duration">
+          0:00
+        </span>
+
+      </div>
+
+
+      <!-- КНОПКИ -->
+
+      <div class="player-controls">
+
+        <button
+          id="prevBtn"
+          class="control-btn"
+          type="button">
+          ⏮
+        </button>
+
+        <button
+          id="playBtn"
+          class="play-btn"
+          type="button">
+          ▶
+        </button>
+
+        <button
+          id="nextBtn"
+          class="control-btn"
+          type="button">
+          ⏭
+        </button>
+
+      </div>
+
+
+      <!-- ГРОМКОСТЬ -->
+
+      <div class="volume-area">
+
+        <span>
+          🔊
+        </span>
+
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="1"
+          step="0.01"
+          value="0.8"
+        >
+
+      </div>
+
+
+      <!-- PLAYLIST -->
+
+      <div class="playlist">
+
+        <div class="playlist-title">
+          PLAYLIST
+        </div>
+
+        <div id="playlistItems"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==============================
+         СОЦИАЛЬНЫЕ СЕТИ
+    =============================== -->
+
+    <a
+      href="https://t.me/zxcuull"
+      target="_blank"
+      rel="noopener noreferrer">
+      Telegram
+    </a>
+
+    <a
+      href="https://instagram.com/_khmdv_07"
+      target="_blank"
+      rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@__khamidov__07"
+      target="_blank"
+      rel="noopener noreferrer">
+      TikTok
+    </a>
 
   </div>
 
+
+  <!-- АУДИО -->
+
+  <audio id="audio"></audio>
+
+
+  <!-- JAVASCRIPT -->
+
   <script src="script.js"></script>
+
 </body>
 </html>
