@@ -530,3 +530,398 @@ p {
     max-height: 115px;
   }
 }
+/* =====================================================
+   MANSCLUB — COMPACT UI v2
+===================================================== */
+
+/* ---------- ОБЩАЯ КОМПАКТНОСТЬ ---------- */
+
+.screen {
+    padding: 75px 18px 40px;
+}
+
+.page-container {
+    max-width: 950px;
+}
+
+
+/* ---------- ГЛАВНЫЙ ЭКРАН ---------- */
+
+.hero {
+    min-height: 72vh;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.brand {
+    font-size: 20px;
+    letter-spacing: 7px;
+}
+
+.brand-line {
+    width: 65px;
+    margin: 12px auto 18px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 12vw, 105px);
+}
+
+.hero-description {
+    margin-top: 18px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.hero-info {
+    gap: 18px;
+    margin-top: 18px;
+    font-size: 12px;
+}
+
+.main-button {
+    margin-top: 25px;
+    min-width: 245px;
+    padding: 15px 25px;
+    font-size: 17px;
+}
+
+
+/* ---------- ЗАГОЛОВКИ ---------- */
+
+.section-heading {
+    margin: 5px 0 22px;
+}
+
+.section-label {
+    margin-bottom: 5px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    font-size: 16px;
+}
+
+
+/* ---------- КАРТОЧКИ БАРБЕРОВ ---------- */
+
+.choices-list {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.choice-card {
+    min-height: 82px;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.choice-card.barber-card {
+    min-height: 82px;
+    border-radius: 16px;
+}
+
+.choice-card.barber-card strong {
+    font-size: 27px !important;
+    letter-spacing: .5px;
+}
+
+
+/* ---------- УСЛУГИ ---------- */
+
+.choice-card.service-card {
+    min-height: 90px;
+    padding: 14px;
+    gap: 5px;
+    border-radius: 16px;
+}
+
+.choice-card.service-card strong {
+    font-size: 21px;
+}
+
+.choice-card.service-card span {
+    font-size: 16px;
+}
+
+
+/* ---------- КАЛЕНДАРЬ ---------- */
+
+.calendar-wrapper {
+    padding: 18px;
+    border-radius: 20px;
+}
+
+.calendar-header {
+    margin-bottom: 15px;
+}
+
+.calendar-title {
+    font-size: 22px;
+}
+
+.calendar-nav {
+    width: 42px;
+    height: 42px;
+    font-size: 25px;
+}
+
+.weekdays {
+    gap: 5px;
+    margin-bottom: 7px;
+}
+
+.weekdays div {
+    font-size: 11px;
+}
+
+.calendar-days {
+    gap: 5px;
+}
+
+.calendar-day {
+    min-height: 44px;
+    font-size: 16px;
+}
+
+
+/* ---------- ВРЕМЯ ---------- */
+
+.time-slots {
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.time-slot {
+    min-height: 60px;
+    padding: 10px;
+    border-radius: 14px;
+    font-size: 15px;
+}
+
+
+/* ---------- КНОПКА НАЗАД ---------- */
+
+.back-button {
+    top: 12px;
+    left: 12px;
+
+    padding: 9px 15px;
+
+    font-size: 14px;
+
+    border-radius: 999px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+    padding: 25px 15px 30px;
+}
+
+.footer-brand {
+    font-size: 22px;
+    letter-spacing: 4px;
+}
+
+.footer-address,
+.footer-phone {
+    font-size: 13px;
+}
+
+.footer-links {
+    margin-top: 14px;
+    gap: 18px;
+}
+
+
+/* =====================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .screen {
+        padding:
+            68px
+            12px
+            30px;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .brand {
+        font-size: 15px;
+        letter-spacing: 5px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero-description {
+        margin-top: 15px;
+        font-size: 17px;
+    }
+
+    .hero-info {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+    .main-button {
+        min-width: 220px;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .section-heading {
+        margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .section-heading p {
+        font-size: 15px;
+    }
+
+    .choices-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .choice-card {
+        min-height: 76px;
+        padding: 12px 8px;
+    }
+
+    .choice-card.barber-card {
+        min-height: 76px;
+    }
+
+    .choice-card.barber-card strong {
+        font-size: 22px !important;
+    }
+
+    .choice-card.service-card {
+        min-height: 82px;
+    }
+
+    .choice-card.service-card strong {
+        font-size: 18px;
+    }
+
+    .choice-card.service-card span {
+        font-size: 15px;
+    }
+
+    .calendar-wrapper {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .calendar-title {
+        font-size: 20px;
+    }
+
+    .calendar-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+    }
+
+    .calendar-day {
+        min-height: 40px;
+        font-size: 15px;
+    }
+
+    .time-slots {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7px;
+    }
+
+    .time-slot {
+        min-height: 55px;
+        padding: 8px 4px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .site-footer {
+        padding:
+            22px
+            12px
+            25px;
+    }
+}
+
+
+/* =====================================================
+   ОЧЕНЬ МАЛЕНЬКИЙ ЭКРАН
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-info {
+        gap: 8px;
+        font-size: 9px;
+    }
+
+    .choices-list {
+        gap: 8px;
+    }
+
+    .choice-card.barber-card strong {
+        font-size: 19px !important;
+    }
+
+    .choice-card.service-card strong {
+        font-size: 16px;
+    }
+
+    .choice-card.service-card span {
+        font-size: 14px;
+    }
+
+    .calendar-day {
+        min-height: 37px;
+        font-size: 14px;
+    }
+
+    .time-slots {
+        gap: 6px;
+    }
+
+    .time-slot {
+        min-height: 50px;
+        font-size: 13px;
+    }
+}
