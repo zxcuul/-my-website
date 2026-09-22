@@ -1390,3 +1390,234 @@ p {
         font-size: 15px;
     }
 }
+/* =====================================================
+   MANSCLUB — COMPACT PREMIUM HOME
+===================================================== */
+
+.hero {
+    min-height: 68vh;
+    padding: 20px 0;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+/* MANSCLUB */
+
+.brand {
+    font-size: 18px;
+    letter-spacing: 6px;
+
+    color: var(--gold-light);
+
+    text-shadow:
+        0 0 18px rgba(212,175,55,.2);
+}
+
+.brand-line {
+    width: 55px;
+    height: 2px;
+
+    margin: 10px auto 15px;
+}
+
+/* BARBERSHOP */
+
+.hero h1 {
+    font-size:
+        clamp(52px, 11vw, 95px);
+
+    letter-spacing: -1px;
+
+    line-height: .9;
+
+    text-shadow:
+        0 4px 25px rgba(0,0,0,.7),
+        0 0 30px rgba(212,175,55,.12);
+}
+
+/* ОПИСАНИЕ */
+
+.hero-description {
+    max-width: 600px;
+
+    margin:
+        16px auto 0;
+
+    font-size: 17px;
+
+    line-height: 1.35;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(255,255,255,.72);
+}
+
+/* ИНФОРМАЦИЯ */
+
+.hero-info {
+    margin-top: 17px;
+
+    gap: 14px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+/* КНОПКА */
+
+.main-button {
+    margin-top: 23px;
+
+    min-width: 230px;
+
+    padding:
+        14px
+        24px;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    border-radius: 14px;
+}
+
+.main-button:hover {
+    transform:
+        translateY(-3px);
+}
+
+
+/* =====================================================
+   ДЕКОРАТИВНАЯ ЗОЛОТАЯ ЛИНИЯ
+===================================================== */
+
+.hero-content::after {
+    content: "";
+
+    display: block;
+
+    width: 100px;
+    height: 1px;
+
+    margin:
+        25px
+        auto
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+    opacity: .5;
+}
+
+
+/* =====================================================
+   МОБИЛЬНЫЙ
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 66vh;
+
+        padding:
+            15px
+            0;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .brand {
+        font-size: 14px;
+
+        letter-spacing: 5px;
+    }
+
+    .brand-line {
+        width: 45px;
+
+        margin:
+            8px
+            auto
+            13px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-description {
+        max-width: 330px;
+
+        font-size: 15px;
+
+        letter-spacing: 1.5px;
+
+        margin-top: 14px;
+    }
+
+    .hero-info {
+        margin-top: 14px;
+
+        gap: 9px;
+
+        font-size: 9px;
+    }
+
+    .main-button {
+        margin-top: 20px;
+
+        min-width: 210px;
+
+        padding:
+            13px
+            20px;
+
+        font-size: 15px;
+    }
+
+    .hero-content::after {
+        margin-top: 20px;
+    }
+}
+
+
+/* =====================================================
+   МАЛЕНЬКИЙ ТЕЛЕФОН
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero {
+        min-height: 64vh;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-info {
+        font-size: 8px;
+    }
+
+    .main-button {
+        min-width: 195px;
+
+        font-size: 14px;
+    }
+}
