@@ -1113,3 +1113,280 @@ p {
         padding: 11px;
     }
 }
+/* =====================================================
+   MANSCLUB — COMPACT BOOKING UI
+===================================================== */
+
+/* ---------- КАЛЕНДАРЬ ---------- */
+
+.calendar-wrapper {
+    padding: 16px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, .58);
+
+    border:
+        1px solid
+        rgba(212, 175, 55, .25);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+}
+
+.calendar-header {
+    margin-bottom: 14px;
+}
+
+.calendar-title {
+    font-size: 21px;
+
+    letter-spacing: 1px;
+}
+
+.calendar-nav {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+    background:
+        rgba(212,175,55,.06);
+
+    transition:
+        .2s ease;
+}
+
+.calendar-nav:hover {
+    transform: scale(1.06);
+
+    background:
+        rgba(212,175,55,.16);
+}
+
+
+/* ---------- ДНИ НЕДЕЛИ ---------- */
+
+.weekdays {
+    gap: 4px;
+
+    margin-bottom: 6px;
+}
+
+.weekdays div {
+    font-size: 10px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    letter-spacing: 1px;
+}
+
+
+/* ---------- ДНИ ---------- */
+
+.calendar-days {
+    gap: 5px;
+}
+
+.calendar-day {
+    min-height: 42px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.12);
+
+    background:
+        rgba(255,255,255,.035);
+
+    font-size: 15px;
+
+    transition:
+        .2s ease;
+}
+
+.calendar-day:hover:not(:disabled) {
+    transform: scale(1.05);
+
+    border-color:
+        rgba(212,175,55,.6);
+
+    background:
+        rgba(212,175,55,.12);
+}
+
+.calendar-day.selected {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,175,55,.38),
+            rgba(212,175,55,.14)
+        );
+
+    border-color:
+        var(--gold-light);
+
+    box-shadow:
+        0 0 18px
+        rgba(212,175,55,.2);
+}
+
+
+/* ---------- ВРЕМЯ ---------- */
+
+.time-slots {
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    margin-bottom: 20px;
+}
+
+.time-slot {
+    min-height: 52px;
+
+    padding: 8px 5px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.16);
+
+    background:
+        rgba(255,255,255,.035);
+
+    font-size: 14px;
+
+    transition:
+        .2s ease;
+}
+
+.time-slot:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(212,175,55,.65);
+
+    background:
+        rgba(212,175,55,.12);
+}
+
+.time-slot.selected {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,175,55,.4),
+            rgba(212,175,55,.15)
+        ) !important;
+
+    border-color:
+        var(--gold-light) !important;
+
+    box-shadow:
+        0 0 18px
+        rgba(212,175,55,.2);
+}
+
+
+/* ---------- КНОПКА ЗАПИСИ ---------- */
+
+.booking-bottom {
+    margin-top: 5px;
+}
+
+.booking-bottom .main-button {
+    margin-top: 0;
+
+    min-width: 220px;
+
+    padding:
+        14px
+        22px;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   ТЕЛЕФОН
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .calendar-wrapper {
+        padding: 12px;
+    }
+
+    .calendar-title {
+        font-size: 18px;
+    }
+
+    .calendar-nav {
+        width: 36px;
+        height: 36px;
+
+        font-size: 20px;
+    }
+
+    .calendar-day {
+        min-height: 39px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+    }
+
+    .time-slots {
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 6px;
+    }
+
+    .time-slot {
+        min-height: 48px;
+
+        font-size: 13px;
+
+        border-radius: 10px;
+    }
+}
+
+
+/* =====================================================
+   МАЛЕНЬКИЙ ТЕЛЕФОН
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .calendar-day {
+        min-height: 36px;
+
+        font-size: 13px;
+    }
+
+    .time-slots {
+        gap: 5px;
+    }
+
+    .time-slot {
+        min-height: 45px;
+
+        font-size: 12px;
+    }
+
+    .booking-bottom .main-button {
+        min-width: 200px;
+
+        font-size: 15px;
+    }
+}
