@@ -925,3 +925,191 @@ p {
         font-size: 13px;
     }
 }
+/* =====================================================
+   MANSCLUB — PREMIUM COMPACT CARDS
+===================================================== */
+
+.choice-card {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(212, 175, 55, .25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(0,0,0,.58)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.28);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+/* Блик */
+
+.choice-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent
+        );
+
+    transform: skewX(-25deg);
+
+    transition: left .6s ease;
+
+    pointer-events: none;
+}
+
+.choice-card:hover::after {
+    left: 140%;
+}
+
+
+/* Наведение */
+
+.choice-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(212,175,55,.7);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(212,175,55,.11),
+            rgba(0,0,0,.65)
+        );
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.4),
+        0 0 25px rgba(212,175,55,.12);
+}
+
+
+/* =====================================================
+   БАРБЕРЫ
+===================================================== */
+
+.choice-card.barber-card {
+    min-height: 88px;
+
+    padding: 12px;
+
+    border-radius: 18px;
+}
+
+.choice-card.barber-card strong {
+    position: relative;
+    z-index: 2;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.choice-card.barber-card:hover strong {
+    color: var(--gold-light);
+
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   УСЛУГИ
+===================================================== */
+
+.choice-card.service-card {
+    position: relative;
+
+    min-height: 95px;
+
+    padding: 15px;
+
+    border-radius: 18px;
+}
+
+.choice-card.service-card strong {
+    position: relative;
+    z-index: 2;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.choice-card.service-card span {
+    position: relative;
+    z-index: 2;
+
+    transition:
+        text-shadow .25s ease;
+}
+
+.choice-card.service-card:hover strong {
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+.choice-card.service-card:hover span {
+    text-shadow:
+        0 0 15px rgba(212,175,55,.5);
+}
+
+
+/* =====================================================
+   АКТИВНОЕ НАЖАТИЕ
+===================================================== */
+
+.choice-card:active {
+    transform: scale(.97);
+}
+
+
+/* =====================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .choice-card {
+        box-shadow:
+            0 5px 18px rgba(0,0,0,.25);
+    }
+
+    .choice-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .choice-card.barber-card {
+        min-height: 72px;
+        border-radius: 15px;
+    }
+
+    .choice-card.service-card {
+        min-height: 78px;
+        border-radius: 15px;
+        padding: 11px;
+    }
+}
